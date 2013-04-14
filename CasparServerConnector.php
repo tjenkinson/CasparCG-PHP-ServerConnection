@@ -7,7 +7,7 @@ class CasparServerConnector
 	private $connected = FALSE;
 	
 
-    public function __construct($address, $port) {
+	public function __construct($address, $port) {
 		$this->address = $address;
 		$this->port = $port;
 		if (!$this->connectSocket()) {
