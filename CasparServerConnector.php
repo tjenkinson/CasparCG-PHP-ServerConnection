@@ -32,7 +32,9 @@ class CasparServerConnector
 		}
 		fwrite($this->socket, $out . "\r\n");
 		
-		$status = fgets($this->socket);
+		$line = fgets($socket);
+		$line = explode(" ", $line);
+		$status = intval($line[0], 10);
 		$hasResponse = true;
 		if ($status ===  200) { // several lines followed by empty line
 			$endSequence = "\r\n\r\n";
