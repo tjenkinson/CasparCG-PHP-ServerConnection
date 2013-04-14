@@ -32,7 +32,7 @@ class CasparServerConnector
 		}
 		fwrite($this->socket, $out . "\r\n");
 		
-		$line = fgets($socket);
+		$line = fgets($this->socket);
 		$line = explode(" ", $line);
 		$status = intval($line[0], 10);
 		$hasResponse = true;
