@@ -13,7 +13,7 @@ class CasparServerConnector
 		if (!$this->connectSocket()) {
 			throw new Exception("The socket could not be created.");
 		}
-    }
+	}
 	
 	private function connectSocket() {
 		if ($this->connected) {
