@@ -43,7 +43,7 @@ class CasparServerConnector
 			$endSequence = "\r\n";
 		}
 		else {
-			$hasResponse = false;
+			$hasResponse = FALSE;
 		}
 		
 		if ($hasResponse) {
