@@ -56,7 +56,10 @@ class CasparServerConnector
 	}
 	
 	public static function escapeString($string) {
-		return str_replace('"', '\"', str_replace("\n", '\n', str_replace('\\', '\\\\', $string)));
+		$escaped = str_replace('"', '\"', str_replace("\n", '\n', str_replace('\\', '\\\\', $string)));
+		if (strpos($escaped, " ") !== false) {
+			$escaped = '"' . $escaped . '"';
+		return $escaped;
 	}
 	
 	public function closeSocket() {
